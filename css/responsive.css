@@ -1,0 +1,248 @@
+/* ==================================================
+   19. Responsividade — tablets e telas intermediárias
+   ================================================== */
+
+@media (max-width: 960px) {
+    .nav-links {
+        position: fixed;
+        inset: 76px 20px auto;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-actions .button {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 140px;
+    }
+
+    .hero-visual {
+        min-height: 390px;
+    }
+
+    .section-heading {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .about-grid,
+    .projects-grid,
+    .project-filters,
+    .timeline,
+    .process-list {
+        margin-left: 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card:first-child {
+        grid-column: auto;
+    }
+
+    .process-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .process-list li:nth-child(2) {
+        border-right: 0;
+    }
+
+    .process-list li:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
+    }
+}
+
+/* ==================================================
+   20. Responsividade — dispositivos móveis
+   ================================================== */
+
+@media (max-width: 640px) {
+    .container {
+        width: min(calc(100% - 30px), 1160px);
+    }
+
+    .section {
+        padding: 82px 0;
+    }
+
+    .nav {
+        height: 68px;
+    }
+
+    .brand strong {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 120px;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-lead {
+        font-size: 17px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 38px;
+    }
+
+    .hero-facts div {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .hero-visual {
+        min-height: 320px;
+    }
+
+    .code-window {
+        transform: none;
+    }
+
+    .code-window pre {
+        padding: 22px;
+        font-size: 11px;
+    }
+
+    .orbit {
+        display: none;
+    }
+
+    .section-heading {
+        margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+        font-size: 38px;
+    }
+
+    .about-grid {
+        gap: 40px;
+    }
+
+    .capability-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card,
+    .project-card:first-child {
+        min-height: 360px;
+    }
+
+    .project-card {
+        padding: 24px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .process-list {
+        grid-template-columns: 1fr;
+    }
+
+    .process-list li {
+        border-right: 0;
+        border-bottom: 1px solid var(--line) !important;
+    }
+
+    .process-list li:last-child {
+        border: 0 !important;
+    }
+
+    .process-list h3 {
+        margin-top: 20px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-actions {
+        gap: 30px;
+    }
+
+    .contact-actions>div {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    footer .container {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    footer p {
+        order: 3;
+        width: 100%;
+    }
+
+    .modal-body {
+        padding: 48px 24px 28px;
+    }
+
+    .modal-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================================================
+   21. Preferências de acessibilidade
+   ================================================== */
+
+/* Respeita a configuração de redução de movimento do usuário. */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .cursor-glow {
+        display: none;
+    }
+}

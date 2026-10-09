@@ -1,0 +1,325 @@
+/* ==================================================
+   5. Cabeçalho e navegação principal
+   ================================================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    inset-inline: 0;
+    z-index: 100;
+    border-bottom: 1px solid transparent;
+    background: var(--header);
+    backdrop-filter: blur(18px);
+    transition: 0.3s;
+}
+
+.site-header.scrolled {
+    border-color: var(--line);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-family: var(--font-display);
+}
+
+.brand>span {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.brand strong {
+    font-size: 14px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-toggle,
+.menu-toggle {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 1px;
+    margin: 5px auto;
+    background: currentColor;
+}
+
+/* ==================================================
+   6. Botões e links de texto
+   ================================================== */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.button-small {
+    padding: 8px 14px;
+    font-size: 13px;
+}
+
+.button-outline {
+    border: 1px solid var(--line);
+}
+
+.button-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.button-primary {
+    padding: 13px 19px;
+    background: var(--accent);
+    color: #06150f;
+    box-shadow: 0 10px 32px rgba(64, 224, 193, 0.15);
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--line);
+    font-weight: 600;
+}
+
+.text-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ==================================================
+   8. Faixa contínua de tecnologias
+   ================================================== */
+
+.tech-strip {
+    overflow: hidden;
+    padding: 15px 0;
+    border-block: 1px solid var(--line);
+    color: var(--muted);
+}
+
+.marquee {
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.marquee span {
+    font: 700 12px var(--font-display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.marquee i {
+    color: var(--accent);
+    font-style: normal;
+}
+
+/* ==================================================
+   9. Títulos compartilhados entre seções
+   ================================================== */
+
+.section-heading {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    margin-bottom: 64px;
+}
+
+.section-index {
+    color: var(--accent);
+    font: 700 11px var(--font-display);
+    letter-spacing: 0.15em;
+}
+
+.section-heading h2 {
+    font-size: clamp(38px, 5vw, 64px);
+}
+
+.section-heading h2 span {
+    color: var(--muted);
+}
+
+/* ==================================================
+   16. Modal de detalhes dos projetos
+   ================================================== */
+
+.project-modal {
+    width: min(720px, calc(100% - 32px));
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: var(--shadow);
+}
+
+.project-modal::backdrop {
+    background: rgba(1, 8, 15, 0.78);
+    backdrop-filter: blur(5px);
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 48px;
+}
+
+.modal-body .tag {
+    margin: 0;
+}
+
+.modal-body h2 {
+    margin: 12px 0;
+    font: 800 36px var(--font-display);
+}
+
+.modal-body>p {
+    color: var(--muted);
+}
+
+.modal-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 28px 0;
+}
+
+.modal-features div {
+    padding: 13px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--bg);
+    font-size: 13px;
+}
+
+.modal-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+/* ==================================================
+   17. Estados de visibilidade e interação
+   ================================================== */
+
+/* Revelado quando o JavaScript adiciona a classe .visible. */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+/* ==================================================
+   18. Animações
+   ================================================== */
+
+@keyframes pulse {
+    50% {
+        box-shadow: 0 0 0 9px rgba(64, 224, 193, 0);
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+

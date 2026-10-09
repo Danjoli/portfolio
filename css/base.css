@@ -1,0 +1,112 @@
+/* ==================================================
+   1. Variáveis de design e temas
+   ================================================== */
+
+:root {
+    --bg: #07111f;
+    --surface: #0d1a2b;
+    --surface-2: #122236;
+    --text: #f3f6f8;
+    --muted: #9babb9;
+    --line: #213249;
+    --accent: #40e0c1;
+    --accent-2: #8aa5ff;
+    --header: rgba(7, 17, 31, 0.76);
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    --radius: 22px;
+    --font-display: "Manrope", sans-serif;
+    --font-body: "DM Sans", sans-serif;
+}
+
+/* Sobrescreve as cores quando o tema claro está ativo. */
+[data-theme="light"] {
+    --bg: #f4f7f8;
+    --surface: #ffffff;
+    --surface-2: #eaf0f2;
+    --text: #13202c;
+    --muted: #5e6c78;
+    --line: #d7e0e4;
+    --accent: #087d70;
+    --accent-2: #536fce;
+    --header: rgba(244, 247, 248, 0.8);
+    --shadow: 0 24px 80px rgba(27, 50, 68, 0.12);
+}
+
+/* ==================================================
+   2. Reset e estilos globais
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* ==================================================
+   3. Utilitários reutilizáveis de layout
+   ================================================== */
+
+.container {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+/* ==================================================
+   4. Acessibilidade e efeitos decorativos
+   ================================================== */
+
+/* Permite que usuários de teclado avancem diretamente ao conteúdo. */
+.skip-link {
+    position: fixed;
+    top: -60px;
+    left: 16px;
+    z-index: 1000;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #04130f;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+.cursor-glow {
+    position: fixed;
+    z-index: -1;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle,
+            rgba(64, 224, 193, 0.08),
+            transparent 68%);
+    transform: translate(-50%, -50%);
+}
+
